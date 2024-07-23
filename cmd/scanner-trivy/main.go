@@ -3,11 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"log/slog"
-	"os"
-	"os/signal"
-	"syscall"
-
 	"github.com/aquasecurity/harbor-scanner-trivy/pkg/etc"
 	"github.com/aquasecurity/harbor-scanner-trivy/pkg/ext"
 	"github.com/aquasecurity/harbor-scanner-trivy/pkg/http/api"
@@ -17,13 +12,17 @@ import (
 	"github.com/aquasecurity/harbor-scanner-trivy/pkg/redisx"
 	"github.com/aquasecurity/harbor-scanner-trivy/pkg/scan"
 	"github.com/aquasecurity/harbor-scanner-trivy/pkg/trivy"
+	"log/slog"
+	"os"
+	"os/signal"
+	"syscall"
 )
 
 var (
 	// Default wise GoReleaser sets three ldflags:
 	version = "dev"
-	commit  = "none"
-	date    = "unknown"
+	commit  = "release-0.30.23"
+	date    = "2024-07-23"
 )
 
 func main() {
